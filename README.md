@@ -1,4 +1,10 @@
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <wchar.h>
+#include <Windows.h>
+#include <algorithm>
+#include <vector>
 #include <string>
 #include <conio.h>
 
