@@ -1,0 +1,41 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <wchar.h>
+#include <Windows.h>
+#include <algorithm>
+#include <vector>
+#include <string>
+#include <string.h>
+#include <stdlib.h>
+#include <cstring>
+#include <conio.h>
+#include <iomanip>
+#include <process.h>
+
+
+
+using namespace std;
+class Distance {
+private:
+    int feet;
+    float inches;
+public:
+    void getdist() {
+        cout << "\nEnter a number of feets: ";cin >> feet;
+        cout << "Enter a number of inches: ";cin >> inches;
+    }
+    void showdist() const {
+        cout << feet << "\'-" << inches << '\"';
+    }
+};
+
+int main()
+{
+    Distance& dist = *(new Distance);
+    dist.getdist();
+    dist.showdist();
+    cout << endl;
+
+    return 0;
+}
