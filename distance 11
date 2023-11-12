@@ -1,0 +1,51 @@
+#include <iostream>
+#include <ctime>
+#include <wchar.h>
+#include <Windows.h>
+#include <algorithm>
+#include <vector>
+#include <string>
+#include <string.h>
+#include <stdlib.h>
+#include <cstring>
+#include <conio.h>
+#include <iomanip>
+#include <process.h>
+#include <ctime>
+#include <cstdlib>
+
+
+
+using namespace std;
+class Distance {
+private:
+    int feet;
+    float inches;
+public:
+    Distance() : feet(0), inches(0.0)
+    {}
+    Distance(int ft, float in) : feet(ft), inches(in)
+    {}
+    void showdist() const {
+        cout << feet << "\'-" << inches << '\"';
+    }
+    float square();
+};
+float Distance::square() {
+    float fltfeet = feet + inches / 12;
+    float feetsqrd = fltfeet * fltfeet;
+    return feetsqrd;
+}
+
+
+int main()
+{
+    Distance dist(3, 6.0);
+    float sqft;
+
+    sqft = dist.square();
+    cout << "\nDistance = ";dist.showdist();
+    cout << "\nsquare distance = " << sqft << " sq. feet\n";
+
+    return 0;
+}
