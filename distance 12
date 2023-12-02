@@ -1,0 +1,58 @@
+#include <iostream>
+#include <ctime>
+#include <wchar.h>
+#include <Windows.h>
+#include <algorithm>
+#include <vector>
+#include <string>
+#include <string.h>
+#include <stdlib.h>
+#include <cstring>
+#include <conio.h>
+#include <iomanip>
+#include <process.h>
+#include <ctime>
+#include <cstdlib>
+#include <typeinfo>
+#include <fstream>
+
+
+
+using namespace std;
+class Distance {
+private:
+    int feet;
+    float inches;
+public:
+    Distance() : feet(0), inches(0.0)
+    {}
+    Distance(int ft, float in) : feet(ft), inches(in)
+    {}
+    friend istream& operator >> (istream& s, Distance& d);
+    friend ostream& operator << (ostream& s, Distance& d);
+};
+istream& operator >> (istream& s, Distance& d) {
+    cout << "\nEnter the feet: ";
+    s >> d.feet;
+    cout << "Enter inches: ";
+    s >> d.inches;
+    return s;
+}
+ostream& operator << (ostream& s, Distance& d) {
+    s << d.feet << "\'-" << d.inches << '\"';
+    return s;
+}
+
+
+int main()
+{
+    Distance dist1, dist2;
+    Distance dist3(11, 6.25);
+    cout << "\nEnter two distance values: ";
+    cin >> dist1 >> dist2;
+
+    cout << "\ndist1 = " << dist1 << "\ndist2 = " << dist2
+        << "\ndist3 = " << dist3 << endl;
+
+    return 0;
+}
